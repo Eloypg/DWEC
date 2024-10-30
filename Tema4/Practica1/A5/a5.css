@@ -1,0 +1,44 @@
+/* Estilo para el cuerpo */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url('siuuuu.jpg'); /* Cambia esto por la ruta de tu imagen */
+    background-size: cover; /* Hace que la imagen cubra toda la pantalla */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+}
+
+/* Título principal */
+h1 {
+    color: #fff; /* Cambia a blanco para que destaque sobre el fondo */
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Contenedor del resultado */
+#result {
+    font-size: 3em;
+    color: #ff6f20; /* Color naranja */
+    margin-bottom: 20px;
+}
+
+/* Estilo del botón */
+button {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background-color: #ff6f20; /* Color naranja */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #e65c17; /* Color naranja más oscuro al pasar el cursor */
+}

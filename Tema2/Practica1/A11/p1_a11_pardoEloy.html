@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dado</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+            flex-direction: column;
+        }
+
+        h1 {
+            color: #007bff;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #resultado {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        #numeros {
+            font-size: 16px;
+            margin-top: 10px;
+            color: #555;
+        }
+    </style>
+    <script src="p1_a11_pardoEloy.js"></script>
+</head>
+<body>
+
+    <!-- Título de la página -->
+    <h1>Dado</h1>
+
+    <!-- Botón para iniciar la simulación -->
+    <button onclick="lanzarDado()">Lanzar Dado</button>
+
+    <!-- Mostrar los números generados y el resultado -->
+    <div id="numeros"></div>
+    <div id="resultado"></div>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Cálculo de Salario</title>
+    <script src="p1_a1_pardoEloy.js" async></script>
+    <link rel="stylesheet" href="p1_a1_pardoEloy.css">
+</head>
+<body>
+    <h1>Cálculo de Salario</h1>
+    
+    <label for="name">Nombre:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+        
+        <label for="surname">Apellidos:</label><br>
+        <input type="text" id="surname" name="surname" required><br><br>
+        
+        <label for="salary">Salario:</label><br>
+        <input type="number" id="salary" name="salary" step="100" required><br><br>
+        
+        <label for="age">Edad:</label><br>
+        <input type="number" id="age" name="age" required><br><br>
+
+    <button onclick="recalculateSalary()">Calcular salario</button>
+
+    <!-- Sección para mostrar el resultado -->
+    <div id="result"></div>    
+</body>
+</html>
