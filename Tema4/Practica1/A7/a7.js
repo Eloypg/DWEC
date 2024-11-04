@@ -4,9 +4,6 @@ let punto = {
     _z: 0,
     cuadrante: 0,
 
-    set y(x){
-        this._y = x * 2;
-    },
     get y(){
         return this.x * 2;
     },
@@ -19,12 +16,11 @@ let punto = {
     },
 
     get cuadrante(){
-        if(this.x > 0 && this.y > 0) this.cuadrante = 1;
-        else if(this.x < 0 && this.y > 0) this.cuadrante = 2;
-        else if(this.x < 0 && this.y < 0) this.cuadrante = 3;
-        else if(this.x > 0 && this.y < 0) this.cuadrante = 4;
-
-        return this.cuadrante;
+        if(this.x > 0 && this.y > 0) return 1;
+        else if(this.x < 0 && this.y > 0) return 2;
+        else if(this.x < 0 && this.y < 0) return 3;
+        else if(this.x > 0 && this.y < 0) return 4;
+        else return 0;
     },
 
 
@@ -44,3 +40,7 @@ let punto = {
 
 punto.x = 5;
 punto.distancia();
+
+console.log("aaaaaaaaaaaaaa");
+const json = JSON.stringify(punto, null, 2);
+console.log(json);
