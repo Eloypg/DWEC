@@ -23,7 +23,7 @@ class Bill {
     }
 
     constructor(clientID, totalImport) {
-        this.id = billIdGenerator();
+        this.id = Bill.billIdGenerator();
         this.clientID = clientID;
         this.totalImport = totalImport;
         this.isPaid = "Pendiente";
@@ -48,6 +48,20 @@ class DetailedBill extends Bill {
         super(clientID, totalImport);
         this.articles = [];
     }
+
+    addArticle(article) {
+        this.articles.push(article);
+    }
+
+    showDetailedBill(){
+        return `${super.showBill()}, Articulos: ${this.articles}`;
+    }
+}
+class Articles {
+    constructor (name, price) {
+        this.name = name;
+        this.price = price;
+    }
 }
 
 let clientJuan = new Client("Juan", "juan@mail.com", 634567187);
@@ -59,3 +73,13 @@ let billJuan = new Bill(clientJuan.id, 300);
 console.log(billJuan.showBill());
 billJuan.payBill();
 console.log(billJuan.showBill());
+
+let detailedBillJuan = new DetailedBill(clientJuan.id, billJuan.totalImport);
+console.log(detailedBillJuan.showDetailedBill())
+let article1 = new Articles("Estuche Azul", 10);
+let article2 = new Articles("Estuche Rojo", 15);
+let article3 = new Articles("Lápiz Gigante", 199.95);
+detailedBillJuan.addArticle(article1);
+detailedBillJuan.addArticle(article2);
+detailedBillJuan.addArticle(article3);
+console.log(detailedBillJuan.showDetailedBill());
