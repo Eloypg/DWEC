@@ -33,19 +33,20 @@
             </p>
         </div>
     </div>
-    <form action="" id="form">
+    <form action="" id="addForm">
         <label for="name">Escribe tu nombre: </label>
-        <input type="text" name="name" id="nameInput" placeholder="Escribe aquí tu nombre..." required>
-        <span id="errorMessage" display="none">*Este campo es obligatorio</span>
-        
+        <input type="text" name="name" id="nameInput" placeholder="Escribe aquí tu nombre..." >
+        <span id="nameErrMsg" class="errorMessage">*Este campo es obligatorio</span>
+        <br>
         <label for="email">Escribe tu email: </label>
-        <input type="email" name="email" id="emailInput" placeholder="Escribe aquí tu email...">
-        <span id="errorMessage" display="none">*Este campo es obligatorio</span>
-        
+        <input type="email" name="email" id="emailInput" placeholder="Escribe aquí tu email..." required>
+        <span id="emailErrMsg" class="errorMessage">*Este campo es obligatorio</span>
+        <br>
         <label for="paragraph">Escribe un párrafo:</label><br>
-        <textarea name="paragraph" id="paragraphInput" cols="40" rows="5" placeholder="Escribe un nuevo párrafo..." required wrap="hard"></textarea>
-        <span id="errorMessage" display="none">*Este campo es obligatorio</span>
-        
+        <textarea name="paragraph" id="paragraphInput" cols="40" rows="5" placeholder="Escribe un nuevo párrafo..."  wrap="hard" required>
+        </textarea>
+        <span id="paragraphErrMsg" class="errorMessage">*Este campo es obligatorio</span>
+        <br>
         <button type="button" id="addButton">AÑADIR</button>
     </form>
 
