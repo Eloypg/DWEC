@@ -3,7 +3,6 @@ window.onload = function() {
     form.reset();
 }
 
-
 function readParagraph(){
     const emailRegex = /^[a-z][a-z0-9_.]*@[a-z]+\.[a-z]{2,3}$/;
 
@@ -35,3 +34,16 @@ function addParagraph(paragraphText) {
 }
 
 document.getElementById("addButton").addEventListener("click", readParagraph);
+
+window.onload = function(){
+    var cookie = document.cookie;
+    if(cookie != null && cookie != undefined) {
+        if(cookie.length > 0){
+            var seenCount = parseInt(cookie.split("=")[1]);
+            seenCount++;
+            document.cookie = `visited=${seenCount}`;
+        }
+    } else {
+        document.cookie = "visited=1";
+    }
+}
