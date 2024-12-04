@@ -78,3 +78,11 @@ function countVisits(){
 }
 
 showCookiesWarning();
+
+//RETO 3
+
+//FUNCIÓN DE BUSCAR
+function findWord(){
+    const word = document.getElementById("findInput").value;
+    window.find(word);
+}
