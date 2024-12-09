@@ -83,6 +83,28 @@ showCookiesWarning();
 
 //FUNCIÓN DE BUSCAR
 function findWord(){
-    const word = document.getElementById("findInput").value;
+    const word = document.getElementById("findInputForFirstWord").value;
     window.find(word);
 }
+
+//RETO 4
+
+//FUNCION DE REMARCAR
+function highlightWords(){
+    const marks = document.querySelectorAll('mark');
+    marks.forEach(mark => {
+        mark.replaceWith(mark.textContent);
+    })
+
+    const wordToHighlight = document.getElementById("highlightInput").value;
+    const paragraphs = document.querySelectorAll('p');
+
+    paragraphs.forEach(p => {
+        const regex = new RegExp(`(${wordToHighlight})`, 'gi');
+        p.innerHTML = p.innerHTML.replace(regex, '<mark>$1</mark>');
+    })
+}
+
+//RETO 5
+
+ 0

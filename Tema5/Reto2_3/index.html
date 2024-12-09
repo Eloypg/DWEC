@@ -50,9 +50,13 @@
         <button type="button" id="addButton">AÑADIR</button>
         <br>
         <br>
-        <label for="find">Buscar: </label>
-        <input type="text" name="find" id="findInput" placeholder="Que quieres bucar...">
+        <label for="findFirstWord">Buscar: </label>
+        <input type="text" name="findFirstWord" id="findInputForFirstWord" placeholder="La palabra que busques solo se remarcará la 1ª vez que aparezca.">
         <input type="button" value="BUSCAR" onclick="findWord()">
+        <br>
+        <label for="highlightWords">Remarcar palabra: </label>
+        <input type="text" name="highlightWords" id="highlightInput" placeholder="La palabra que busques se remarcará todas las veces que salga.">
+        <input type="button" value="REMARCAR" onclick="highlightWords()">
     </form>
 
     <span id="visits-counter">Número de visitas: 0</span>
