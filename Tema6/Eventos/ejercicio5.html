@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="mouseDiv">
+        <h1><strong>Ratón</strong></h1>
+    </div>
+    <div id="keyboardDiv">
+        <h1><strong>Teclado</strong></h1>
+        <p>Carácter: </p>
+        <p>Código: </p>
+    </div>
+    <div id="interactionDiv">
+        <p>Interaccion con el usuario</p>
+    </div>
+    <script>
+        const mouseDiv = document.getElementById("mouseDiv");
+        const keyboardDiv = document.getElementById("keyboardDiv");
+        const interactionDiv = document.getElementById("interactionDiv");
+
+        document.addEventListener("mousemove", () => {
+            mouseDiv.style.backgroundColor = "";
+            interactionDiv.style.backgroundColor = "";
+            keyboardDiv.style.backgroundColor = "";
+        }) 
+
+        document.addEventListener("click", () => {
+            mouseDiv.style.backgroundColor = "yellow";
+            keyboardDiv.style.backgroundColor = "";
+            interactionDiv.style.backgroundColor = "yellow";
+        })
+
+        document.addEventListener("keydown", () => {
+            mouseDiv.style.backgroundColor = "";
+            keyboardDiv.style.backgroundColor = "aquamarine";
+            interactionDiv.style.backgroundColor = "aquamarine";
+        })
+    </script>
+</body>
+</html>

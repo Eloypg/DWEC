@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página con fondo dinámico</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 24px;
+            text-align: center;
+        }
+
+        .hidden {
+            background-image: url('imagen.jpeg');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="message">No pulses Alt+F12 para colocar una imagen de fondo</div>
+    <div id="newMessage" style="display: none; font-size: 100px;">Que te he dicho?</div>
+
+    <script>
+        document.addEventListener("keydown", (event) => {
+            if (event.altKey && event.code === "F12") {
+                document.body.classList.add("hidden");
+                document.getElementById("message").style.display = "none";
+                document.getElementById("newMessage").style.display = "";
+            }
+        });
+    </script>
+</body>
+</html>

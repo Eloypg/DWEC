@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambio de color</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        Pinta de rojo
+        <button>Pinta de verde</button>
+    </div>
+
+
+    <script>
+        const red = document.querySelector("div");
+        const green = document.querySelector("button");
+        const body = document.querySelector("body");
+
+        red.addEventListener("click", () => {
+            body.style.backgroundColor = "red";
+        })
+        green.addEventListener("click", (event) => {
+            body.style.backgroundColor = "green";
+            event.stopPropagation();
+        })
+    </script>
+</body>
+</html>

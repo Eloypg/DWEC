@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página con cursor personalizado</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cursor-banner {
+            position: absolute;
+            background-color: yellow;
+            color: black;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            pointer-events: none;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>Bienvenido a la página</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel nisl non lectus venenatis laoreet. Donec commodo nunc nec augue sodales aliquam.</p>
+        <p>Proin at arcu sit amet nisl suscipit efficitur. Praesent vel nunc non justo fermentum facilisis in vel arcu. Vivamus id nisl vel odio convallis eleifend.</p>
+        <p>Sed auctor, magna vitae tincidunt gravida, nulla magna dictum erat, a pharetra sapien neque a justo. Donec ultricies velit eget erat tincidunt feugiat.</p>
+        <p>Nulla facilisi. Ut convallis malesuada massa, non tincidunt dolor bibendum et. Integer vehicula, ligula a tincidunt blandit, mauris erat vestibulum justo, eget posuere turpis erat id turpis.</p>
+        <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Suspendisse potenti.</p>
+        <p>Pellentesque sed felis nec orci luctus aliquet a a turpis. Maecenas bibendum, erat vel aliquam dictum, urna est volutpat felis, a facilisis arcu sapien ut mi.</p>
+    </div>
+
+    <div id="cursorBanner" class="cursor-banner"></div>
+
+    <script>
+        
+        const cursorBanner = document.getElementById("cursorBanner");
+        cursorBanner.textContent = `Hola`;
+
+        document.addEventListener("mousemove", (event) => {
+            cursorBanner.style.left = `${event.pageX}px`;
+            cursorBanner.style.top = `${event.pageY}px`;
+        });
+    </script>
+</body>
+</html>
