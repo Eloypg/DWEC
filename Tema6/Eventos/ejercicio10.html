@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 10</title>
+    <style>
+    #capa {
+        position: fixed;
+        width: 50%;
+        height: 50%;
+        left: 25%;
+        top: 25%;
+        border: 1px solid black;
+        overflow: auto; 
+    }
+
+    #boton {
+        position: fixed;
+        width: 200px;
+        height: 100px; 
+        bottom: 20px; 
+        left: 50%;
+        transform: translateX(-50%);
+        display: none;
+        text-align: center;
+        color: white; 
+        border-radius: 10px; 
+    }
+
+    #boton button {
+        height: 50px;
+        width: 80%;
+        margin-top: 25px;
+        cursor: pointer;
+    }
+    </style>
+</head>
+<body>
+    <div id="capa">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eleifend, mauris ut efficitur faucibus, justo tellus auctor ante, ac convallis est neque sit amet est. Duis vel scelerisque ante. Fusce eget imperdiet urna, finibus dictum turpis. Nulla posuere fringilla quam eu ultrices. Etiam iaculis vitae nibh nec gravida. Suspendisse quis risus a elit sagittis aliquet in et dolor. Vestibulum id dui in nisi commodo vulputate.</p>
+        <p>Nullam et velit mauris. Sed euismod interdum diam, a iaculis tortor. Nullam ut nisi sapien. Quisque vestibulum nisi tempor erat aliquet, eu congue urna vulputate. Sed ac mi vitae diam interdum viverra. Nunc egestas dapibus orci, quis lacinia odio placerat mollis. Nam sed sapien velit. Ut ut viverra erat, ut aliquet tellus. Pellentesque malesuada metus lectus, vitae euismod dui consequat non. Nunc nec magna imperdiet libero scelerisque faucibus eget sit amet velit. Nullam blandit tortor sed orci fermentum, vitae posuere lectus iaculis. Maecenas non tellus accumsan, faucibus diam ultrices, tincidunt mi. </p>
+        <p>In ante orci, venenatis ac neque ut, iaculis laoreet libero. Nulla fringilla, justo sollicitudin malesuada lacinia, urna risus consequat ipsum, non mollis massa erat a nisi. Fusce tortor turpis, lacinia non hendrerit a, rutrum eu urna. Phasellus sit amet est orci. Nunc in tortor ut metus scelerisque pharetra. Nullam sed turpis a mauris placerat egestas euismod a tortor. Nam vehicula lorem a ornare mattis. Nam volutpat tempus vestibulum. Cras metus massa, auctor eget hendrerit ac, iaculis at dui. Nulla neque eros, consectetur sit amet erat ut, porttitor scelerisque purus. Etiam vel porttitor eros. Duis tristique elit sed risus auctor semper. Morbi vehicula, risus ac ultricies bibendum, massa leo aliquam tellus, non suscipit justo risus at eros. </p>
+        <p>Integer felis ligula, sagittis ut erat nec, eleifend sollicitudin eros. Etiam bibendum aliquam neque, sit amet tempor enim. Donec pellentesque ex ac nunc posuere, quis iaculis ex congue. Phasellus tempus gravida bibendum. Sed ac porttitor tortor, in dapibus leo. Ut lacus risus, rhoncus in sem et, mollis laoreet velit. Aliquam vitae velit eget nunc fringilla ultricies. Interdum et malesuada fames ac ante ipsum primis in faucibus. Maecenas velit dolor, finibus vitae porta non, eleifend vitae erat. Aenean eget dolor ac risus hendrerit vulputate. Ut non tempus nibh. Aliquam id vehicula odio, non lacinia nulla. Aenean et finibus nunc, eu mollis lectus. Nam eget nunc augue. Nam ac magna nec neque vestibulum vestibulum at sit amet dolor. </p>
+        <p>Suspendisse in bibendum velit. Mauris venenatis non nisl et varius. Sed auctor erat a nibh semper scelerisque. Sed a auctor dui. Suspendisse sed augue et diam eleifend venenatis quis vitae mi. Praesent non pulvinar ex, interdum mollis odio. Curabitur vel vulputate dolor, malesuada ultrices nisl. Sed ut faucibus est. Cras bibendum semper imperdiet. Etiam a ex leo. Curabitur porttitor erat tellus, ut finibus dui eleifend a. Maecenas varius a neque eget tristique. Nunc nec nunc elit. Vestibulum imperdiet nulla at eros tincidunt tempus. </p>
+    </div>
+    <div id="boton">
+        <button id="cerrar">CERRAR</button>
+    </div>
+
+    <script>
+        const capa = document.getElementById("capa");
+        const boton = document.getElementById("boton");
+        const cerrar = document.getElementById("cerrar");
+
+        capa.addEventListener('scroll', () => {
+            const scrollTop = capa.scrollTop;
+            const scrollHeight = capa.scrollHeight;
+            const clientHeight = capa.clientHeight;
+
+            if(scrollTop + clientHeight >= scrollHeight) {
+                boton.style.display = "block";
+            }
+        });
+
+        cerrar.addEventListener('click', () => {
+            capa.remove();
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 11</title>
+    <style>
+        #loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: black;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            z-index: 999;
+            transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+
+        #loading.hide {
+            transform: translateY(100%);
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="titulo">Cargando imágenes</h1>
+    <div id="loading">CARGANDO...</div>
+    <div id="imagenes"></div>
+
+    <script>
+        const imagenesTotales = 10;
+        let imagenesCargadas = 0;
+
+        const loading = document.getElementById("loading");
+        const imagenes = document.getElementById("imagenes");
+
+        for (let i = 1; i <= imagenesTotales; i++) {
+            const imagen = document.createElement("img");
+            imagen.src = `https://picsum.photos/200/300?random=${i}`;
+            imagen.addEventListener("load", () => {
+                imagenesCargadas++;
+
+                if(imagenesCargadas === imagenesTotales) {
+                    loading.classList.add("hide");
+                    imagenes.style.display = "block";
+                }
+            });
+            imagenes.appendChild(imagen);
+        }
+    </script>
+</body>
+</html>
