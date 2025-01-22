@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrenamiento 1</title>
+</head>
+<body>
+    <form name="formulario" action="procesa_datos.php">
+        <input type="text" name="usuario" id="usuario" placeholder="Nombre de usuario"> <br>
+        <button type="submit">Enviar</button>
+    </form>
+    <div id="mensaje"></div>
+    
+    <script>
+        let formulario = document.forms[0];
+        // También lo podemos seleccionar por su nombre:
+        // let formulario = document.forms['formulario'];
+    
+        let user = document.getElementById("usuario");
+        let mensaje = document.getElementById("mensaje");
+    
+        formulario.addEventListener("submit", function(ev){
+            let exp = "/^[a-zA-Z]{6,}$/";
+    
+            if(exp.test(user.value) == false){
+                ev.preventDefault();
+                mensaje.innerHTML = "<p>Error: nombre de usuario no válido.</p>";
+            }
+        });
+    </script>
+</body>
+</html>
