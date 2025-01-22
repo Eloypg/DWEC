@@ -48,8 +48,7 @@
         destino.addEventListener('dragleave', () => {
             destino.style.backgroundColor = "white";
         })
-        destino.addEventListener('drop', () => {
-            event.preventDefault();
+   +     destino.addEventListener('drop', () => {
             arrastrable.style.display = "none";
             destino.textContent = "LO HAS LOGRADO!!!";
             destino.style.backgroundColor = "white";
