@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+
+    <style>
+        h1 {
+            background-color: orange;
+            text-align: center;
+        }
+        #content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        #imageContainer {
+            grid-column: 1;
+        }
+        #form {
+            grid-column: 2;
+        }
+    </style>
+</head>
+<body>
+    <h1>INFORME DE INCIDENCIA</h1>
+    <div id="content">
+        <img src="" alt="" id="imageContainer">
+        <form action="" id="form">
+             <label for="incidenceType">Tipo de incidencia </label>
+             <select name="incidenceType" id="incidenceSelect">
+                <option value="Perro">Perro</option>
+                <option value="Gato">Gato</option>
+                <option value="Gorrocoptero">Gorrocoptero</option>
+             </select><br><br>
+
+             <label for="numSerie">Número de serie </label>
+             <input type="text" name="numSerie" placeholder="Introduce el número de serie">
+             
+        </form>
+    </div>
+</body>
+</html>

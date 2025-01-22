@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+    <style>
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Formulario de Correo Electrónico</h1>
+    <form id="emailForm">
+        <label for="email">Correo Electrónico:</label><br>
+        <input type="text" id="email" name="email" required><br><br>
+
+        <label for="emailRepeat">Repetir Correo Electrónico:</label><br>
+        <input type="text" id="emailRepeat" name="emailRepeat" autocomplete="false"><br><br>
+
+        <span id="error" class="error"></span><br>
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        document.getElementById('emailForm').addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const email = document.getElementById('email').value.trim();
+            const emailBox = document.getElementById('email');
+            const emailRepeat = document.getElementById('emailRepeat').value.trim();
+            const emailRepeatBox = document.getElementById('emailRepeat');
+            const errorElement = document.getElementById('error');
+
+            errorElement.textContent = '';
+
+            const emailRegex = /^[a-zA-Z][^@]*@[a-zA-Z]+\.[a-zA-Z]{2,3}$/;
+
+            if (!emailRegex.test(email)) {
+                errorElement.textContent = 'El correo electrónico no es válido.';
+                emailBox.focus();
+                emailBox.style.accentColor = "red";
+                return;
+            }
+
+            if (email !== emailRepeat) {
+                errorElement.textContent = 'Los correos electrónicos no coinciden.';
+                emailRepeatBox.focus();
+                emailRepeatBox.style.accentColor = "red";
+                return;
+            }
+
+            email.style.accentColor = "";
+            emailRepeatBox.style.accentColor = "";
+            alert('Formulario enviado correctamente.');
+        });
+
+        document.getElementById('emailRepeat').addEventListener('paste', (event) => {
+            event.preventDefault();
+            alert('No se permite pegar el correo electrónico. Debes escribirlo nuevamente.');
+        });
+
+        window.addEventListener('load', (event) => {
+            document.getElementsByTagName("form")[0].reset();
+        })
+    </script>
+</body>
+</html>
