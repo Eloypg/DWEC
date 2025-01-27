@@ -16,28 +16,73 @@
         }
         #imageContainer {
             grid-column: 1;
+            width: 400px;
+            height: 200px;
         }
         #form {
             grid-column: 2;
+        }
+        #descriptionArea {
+            display: none;
+        }
+        #showDescription {
+            display: block;
         }
     </style>
 </head>
 <body>
     <h1>INFORME DE INCIDENCIA</h1>
     <div id="content">
-        <img src="" alt="" id="imageContainer">
+        <img src="ejercicio2_images/Perro.jpg" alt="Imagen de un perro" id="imageContainer">
         <form action="" id="form">
-             <label for="incidenceType">Tipo de incidencia </label>
+             <label for="incidenceType">Tipo de animal </label>
              <select name="incidenceType" id="incidenceSelect">
                 <option value="Perro">Perro</option>
                 <option value="Gato">Gato</option>
                 <option value="Gorrocoptero">Gorrocoptero</option>
              </select><br><br>
 
-             <label for="numSerie">Número de serie </label>
-             <input type="text" name="numSerie" placeholder="Introduce el número de serie">
+             <label for="name">Nombre </label>
+             <input type="text" name="name" placeholder="Introduce el número de serie"><br><br>
              
+             <button id="showDescription">Añadir descripción</button>
+             <div id="descriptionArea">
+                <h3>Descripción</h3>
+                <textarea name="description" cols="40" rows="10"></textarea>
+             </div><br>
+
+             <button id="sendData">Enviar datos</button>
         </form>
     </div>
+
+    <script>
+
+        const form = document.getElementById("form");
+        const name = document.getElementById("name");
+
+        const image = document.getElementById("imageContainer");
+        const select = document.getElementById("incidenceSelect");
+
+        select.addEventListener('change', () => {
+            image.setAttribute('src', `ejercicio2_images/${select.value}.jpg`);
+            image.setAttribute('alt', `Imagen de un ${select.value}`);
+        })
+
+        const showDescriptionButton = document.getElementById("showDescription");
+        const description = document.getElementById("descriptionArea");
+
+        showDescriptionButton.addEventListener('mousedown', () => {
+            showDescriptionButton.style.display = "none";
+            description.style.display = "block";
+        })
+
+        const sendButton = document.getElementById("sendData");
+
+        sendButton.addEventListener('click', () => {
+            form.reset()
+            alert(`Formulario enviado: \nTipo de animal: ${select.value}.`);
+        })
+
+    </script>
 </body>
 </html>
