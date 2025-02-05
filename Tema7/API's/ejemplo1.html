@@ -1,21 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PokeAPI con jQuery</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
+  <h1>Lista de Pokemons</h1>
     
-    <h1>Abre la consola con F12</h1>
+  <!-- Guardaremos en una tabla la información que nos descarguemos de la API -->
+  <table id="pokemonTable" border="1">
+    
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>URL</th>
+      </tr>
+    </thead>
+    
+    <tbody>
+      <!-- Aquí se irán llenado los datos con jQuery -->
+    </tbody>
+  
+  </table>
 
-    <script>
-
-        $.get('https://pokeapi.co/api/v2/pokemon', function(data){
-            console.log(data);
-        })
-
-    </script>
+  <script src="ejercicio1.js"></script>
 </body>
 </html>
